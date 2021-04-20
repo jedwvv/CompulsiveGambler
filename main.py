@@ -27,8 +27,12 @@ def main():
     start = time.time()
     times = Parallel(n_jobs=cpu_count())(delayed(go_roulette)(1000, 0.05) for _ in range(no_samples))
     end = time.time()
+    print("Average time spent in casino: {} seconds".format(np.mean(times)))
+    print("-----------------------------\
+            \nTotal computation time: {}\
+            \n-----------------------------".format(np.round(end-start))
+            )
     plt.hist(times, bins=1000)
     plt.show()
-    print("Time taken: {}".format(np.round(end-start)))
 
 main()
