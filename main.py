@@ -54,6 +54,5 @@ def main():
     ax.set_xlabel(xlabel='Time spent in Casino (seconds)', fontsize = "large" )
     plt.savefig("PDF_no_samples={:.1E}_bin_size={:.1E}.pdf".format(no_samples, bin_size))
     plt.show()
-    plt.cla()
 
 main()
